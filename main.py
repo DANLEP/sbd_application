@@ -11,6 +11,7 @@ app = FastAPI()
 dao = DAOFactory.get_dao_instance(TypeDAO.MySQL)
 
 
+# Daniil Movchan
 @app.get("/api/users")
 async def get_all_users() -> List[User]:
     return dao.get_users()
