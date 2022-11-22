@@ -1,6 +1,6 @@
-from typing import List
+from typing import List, Union
 
-from DAO.schemas.user import User
+from DAO.schemas.user import User, UserReg
 
 
 class IDAO:
@@ -12,14 +12,22 @@ class IDAO:
         """GET USER BY EMAIL"""
         pass
 
-    def save_user(self, user: User) -> User:
+    def get_user_dict(self, email: str) -> dict:
+        """GET USER BY EMAIL"""
+        pass
+
+    def save_user(self, user: UserReg) -> bool:
         """SAVE USER"""
         pass
 
-    def update_user_role(self, pk_user_role: int) -> User:
+    def save_user_dict(self, user: dict) -> bool:
+        """SAVE USER DICT"""
+        pass
+
+    def update_user_role(self, email: str, pk_user_role: Union[str, int]) -> bool:
         """UPDATE USER ROLE"""
         pass
 
-    def delete_user(self, pk_user: int) -> bool:
+    def delete_user(self, pk_user: Union[str, int]) -> bool:
         """DELETE USER"""
         pass
