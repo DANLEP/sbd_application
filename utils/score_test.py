@@ -24,7 +24,6 @@ def insert_test(users):
     for user in users:
         mongo.save_user_dict(user)
     mongo_save_end = time.time()
-    print("s")
     mysql_save_start = time.time()
     for user in users:
         mysql.save_user_dict(user)
@@ -60,10 +59,10 @@ def select_test(rec, test_email):
 
 
 if __name__ == '__main__':
-    # users = generate_users(500_000)
-    users = generate_users(10)
-    # test_rec = [100, 1000, 10_000, 50_000, 100_000, 500_000]
-    test_rec = [10]
+    users = generate_users(500_000)
+    # users = generate_users(10)
+    test_rec = [100, 1000, 10_000, 50_000, 100_000, 500_000]
+    # test_rec = [10]
 
     for test in test_rec:
         mysql.delete_all_users()

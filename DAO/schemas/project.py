@@ -31,4 +31,5 @@ class Project(ProjectBase):
 
         if kwargs.get("_id"):
             kwargs['pk_project'] = str(kwargs['_id'])
+
         super(Project, self).__init__(**kwargs)
